@@ -1,0 +1,45 @@
+{
+  "recurring_events": {
+    "gym": [
+      {"day": "tuesday", "start": "07:00", "end": "08:00"},
+      {"day": "wednesday", "start": "08:00", "end": "09:00"},
+      {"day": "thursday", "start": "07:00", "end": "08:00"},
+      {"day": "friday", "start": "08:00", "end": "09:00"}
+    ],
+    "water_polo": [
+      {"day": "friday", "start": "22:00", "end": "23:00"},
+      {"day": "sunday", "start": "20:00", "end": "21:00"}
+    ],
+    "client_work": [
+      {"day": "monday", "start": "09:00", "end": "17:00"},
+      {"day": "tuesday", "start": "09:00", "end": "17:00"}
+    ]
+  },
+  "scheduling_preferences": {
+    "deep_work": {
+      "preferred_time": "morning",
+      "preferred_start_hour": 9,
+      "preferred_end_hour": 12,
+      "duration_minutes": 60
+    },
+    "meetings": {
+      "preferred_time": "afternoon",
+      "preferred_start_hour": 14,
+      "preferred_end_hour": 17,
+      "duration_minutes": 45
+    },
+    "default_task_duration": 30
+  },
+  "working_hours": {
+    "start_hour": 9,
+    "end_hour": 17,
+    "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+  },
+  "availability_by_day": {
+    "monday": {"fully_booked": true, "reason": "Full-day client work"},
+    "tuesday": {"fully_booked": true, "reason": "Full-day client work", "exceptions": ["07:00-08:00"]},
+    "wednesday": {"fully_booked": false},
+    "thursday": {"fully_booked": false},
+    "friday": {"fully_booked": false}
+  }
+}

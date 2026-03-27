@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Noah - Mission Control</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 16px;
+      padding-bottom: 80px;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .build-info {
+      font-size: 11px;
+      color: #888;
+      background: rgba(255,255,255,0.1);
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    
+    .status-badges {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge.online { background: linear-gradient(135deg, #00c853, #00e676); color: #000; }
+    .badge.offline { background: linear-gradient(135deg, #f44336, #e57373); color: #fff; }
+    .badge.busy { background: linear-gradient(135deg, #ff9800, #ffb74d); color: #000; }
+    .badge.status { background: rgba(124, 58, 237, 0.3); border: 1px solid #7c3aed; color: #a78bfa; }
+    
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #00d4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    
+    .agent-info h3 { font-size: 18px; margin-bottom: 2px; }
+    .agent-info p { font-size: 12px; color: #888; }
+    
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    
+    .status-dot.active { background: #00e676; box-shadow: 0 0 10px #00e676; }
+    .status-dot.idle { background: #888; }
+    
+    .meta { font-size: 11px; color: #666; margin-top: 8px; }
+    
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #a78bfa;
+    }
+    
+    .cron-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .cron-item:last-child { border-bottom: none; }
+    
+    .cron-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00e676;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .cron-dot.disabled { background: #666; }
+    
+    .cron-name { flex: 1; font-size: 14px; }
+    .cron-schedule { font-size: 11px; color: #666; font-family: monospace; }
+    
+    .empty-state { color: #666; font-style: italic; font-size: 13px; padding: 8px 0; }
+    
+    .loading { text-align: center; padding: 40px; color: #888; }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(124, 58, 237, 0.3);
+      border-top-color: #7c3aed;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+    
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .error {
+      background: rgba(255,0,0,0.1);
+      border: 1px solid rgba(255,0,0,0.3);
+      padding: 12px;
+      border-radius: 8px;
+      color: #ff6b6b;
+      font-size: 13px;
+    }
+    
+    .refresh-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #00d4ff);
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+      z-index: 100;
+    }
+    
+    .model-tier {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 8px;
+    }
+    
+    .tier-opus { background: rgba(255,215,0,0.2); color: #ffd700; }
+    .tier-sonnet { background: rgba(0,212,255,0.2); color: #00d4ff; }
+    .tier-cheap { background: rgba(0,230,118,0.2); color: #00e676; }
+    
+    .subagent-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: rgba(124, 58, 237, 0.1);
+      border-radius: 8px;
+    }
+    
+    .subagent-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    
+    .subagent-info { flex: 1; }
+    .subagent-name { font-size: 13px; font-weight: 500; }
+    .subagent-model { font-size: 11px; color: #888; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Connecting to Noah...</p>
+    </div>
+  </div>
+  
+  <button class="refresh-btn" onclick="loadStatus()">↻</button>
+
+  <script>
+    const tg = window.Telegram?.WebApp;
+    if (tg) {
+      tg.ready();
+      tg.expand();
+    }
+
+    const API_BASE = window.location.origin;
+    
+    async function fetchAPI(endpoint) {
+      try {
+        const response = await fetch(`${API_BASE}${endpoint}`);
+        return await response.json();
+      } catch (error) {
+        console.error('API fetch error:', error);
+        return null;
+      }
+    }
+    
+    function formatTime(ms) {
+      if (!ms) return 'Never';
+      const date = new Date(ms);
+      const now = new Date();
+      const diffMs = now - date;
+      
+      if (diffMs < 60000) return 'just now';
+      if (diffMs < 3600000) return `${Math.floor(diffMs/60000)}m ago`;
+      if (diffMs < 86400000) return `${Math.floor(diffMs/3600000)}h ago`;
+      return date.toLocaleDateString();
+    }
+    
+    function getModelTier(model) {
+      if (!model) return '';
+      if (model.includes('opus')) return '<span class="model-tier tier-opus">Opus</span>';
+      if (model.includes('sonnet') || model.includes('gpt-4o') && !model.includes('mini')) return '<span class="model-tier tier-sonnet">Mid</span>';
+      return '<span class="model-tier tier-cheap">Cheap</span>';
+    }
+    
+    async function loadStatus() {
+      const app = document.getElementById('app');
+      
+      try {
+        const [sessions, crons] = await Promise.all([
+          fetchAPI('/api/sessions'),
+          fetchAPI('/api/crons')
+        ]);
+        
+        // Find main session and subagents
+        const mainSession = sessions?.sessions?.find(s => s.key === 'agent:main:main');
+        const subagents = sessions?.sessions?.filter(s => s.key?.includes('subagent')) || [];
+        
+        // Filter and sort crons
+        const cronJobs = (crons?.jobs || [])
+          .filter(j => j.enabled)
+          .sort((a, b) => (a.state?.nextRunAtMs || 0) - (b.state?.nextRunAtMs || 0));
+        
+        const isOnline = mainSession != null;
+        const lastUpdate = mainSession?.updatedAt ? new Date(mainSession.updatedAt).toLocaleTimeString() : 'Unknown';
+        
+        let subagentsHtml = '<p class="empty-state">No active subagents</p>';
+        if (subagents.length > 0) {
+          subagentsHtml = subagents.map(s => {
+            const model = s.messages?.[0]?.model || 'unknown';
+            return `
+              <div class="subagent-item">
+                <div class="subagent-icon">🤖</div>
+                <div class="subagent-info">
+                  <div class="subagent-name">${s.key?.split(':').pop() || 'Subagent'}</div>
+                  <div class="subagent-model">${model} ${getModelTier(model)}</div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+        
+        const cronsHtml = cronJobs.slice(0, 8).map(j => `
+          <div class="cron-item">
+            <span class="cron-dot ${j.enabled ? '' : 'disabled'}"></span>
+            <span class="cron-name">${j.name}</span>
+            <span class="cron-schedule">${j.schedule?.expr || formatTime(j.schedule?.atMs)}</span>
+          </div>
+        `).join('') || '<p class="empty-state">No scheduled jobs</p>';
+        
+        const html = `
+          <div class="header">
+            <span class="title">Noah</span>
+            <span class="build-info">mission control · ${new Date().toISOString().split('T')[0]}</span>
+          </div>
+          
+          <div class="status-badges">
+            <span class="badge ${isOnline ? 'online' : 'offline'}">${isOnline ? 'Online' : 'Offline'}</span>
+            <span class="badge status">Ready</span>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              <div class="avatar">📋</div>
+              <div class="agent-info">
+                <h3><span class="status-dot ${isOnline ? 'active' : 'idle'}"></span>Main Agent</h3>
+                <p>anthropic/claude-opus-4-5</p>
+              </div>
+            </div>
+            <div class="meta">Updated: ${lastUpdate} · Telemetry OK</div>
+          </div>
+          
+          <div class="card">
+            <div class="section-title">Subagents (${subagents.length})</div>
+            ${subagentsHtml}
+          </div>
+          
+          <div class="card">
+            <div class="section-title">Scheduled Jobs (${cronJobs.length})</div>
+            ${cronsHtml}
+          </div>
+          
+          <div class="card">
+            <div class="section-title">Model Tiers</div>
+            <div style="font-size: 13px; line-height: 1.8;">
+              <span class="model-tier tier-cheap">Cheap</span> Together Llama 3.3 70B<br>
+              <span class="model-tier tier-sonnet">Mid</span> Sonnet / GPT-4o<br>
+              <span class="model-tier tier-opus">High</span> Opus (direct chat)
+            </div>
+          </div>
+        `;
+        
+        app.innerHTML = html;
+        
+      } catch (error) {
+        app.innerHTML = `
+          <div class="header">
+            <span class="title">Noah</span>
+          </div>
+          <div class="error">Failed to connect: ${error.message}</div>
+        `;
+      }
+    }
+    
+    loadStatus();
+    setInterval(loadStatus, 30000);
+  </script>
+</body>
+</html>

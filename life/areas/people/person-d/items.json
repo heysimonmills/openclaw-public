@@ -1,0 +1,55 @@
+{
+  "entity": "Person D",
+  "entityType": "person",
+  "category": "relationship",
+  "facts": [
+    {
+      "id": "person-d-001",
+      "fact": "Person D is [AGE] years old",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-d-002",
+      "fact": "Person D works at [EMPLOYER]",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-d-003",
+      "fact": "Person D is the user's partner, together approximately [DURATION]",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-d-004",
+      "fact": "Person D is described as kind, thoughtful, and a grounding presence",
+      "category": "preference",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}

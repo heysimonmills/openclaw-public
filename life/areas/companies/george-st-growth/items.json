@@ -1,0 +1,67 @@
+{
+  "entity": "Company A",
+  "entityType": "company",
+  "category": "business",
+  "facts": [
+    {
+      "id": "company-a-001",
+      "fact": "Company A is the user's solo consulting business",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-a-002",
+      "fact": "Company A has been operating for approximately [DURATION]",
+      "category": "milestone",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-a-003",
+      "fact": "Company A website is [YOUR_WEBSITE]",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-a-004",
+      "fact": "Company A consulting income exceeded the user's previous salary",
+      "category": "milestone",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-a-005",
+      "fact": "User is winding down Company A to focus on Company B",
+      "category": "status",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}

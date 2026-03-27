@@ -1,0 +1,55 @@
+{
+  "entity": "Person G",
+  "entityType": "person",
+  "category": "friend",
+  "facts": [
+    {
+      "id": "person-g-001",
+      "fact": "Person G is [AGE] years old",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-g-002",
+      "fact": "Person G is a sports friend known for approximately [DURATION]",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-g-003",
+      "fact": "Person G is a performer / creative artist",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-g-004",
+      "fact": "Person G is described as caring, warm, social, and creative",
+      "category": "preference",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}

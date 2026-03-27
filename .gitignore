@@ -1,0 +1,57 @@
+# Clawdbot Workspace - Backup Excludes
+
+# Sensitive files (never commit)
+*.key
+*.pem
+*.token
+*secret*
+.env
+.env.*
+*_tokens.json
+*_config.json
+accounts.db
+
+# Personal data
+data/
+*.csv
+memory/heartbeat-state.json
+memory/email-state.json
+memory/email-tracking.md
+memory/model-usage-log.md
+
+# Node modules & dependencies
+node_modules/
+package-lock.json
+
+# Large binaries & media
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.zip
+*.tar.gz
+
+# Temp & cache
+*.log
+*.tmp
+.DS_Store
+thumbs.db
+
+# Canvas artifacts (optional - can include if small)
+canvas/*.png
+canvas/*.jpg
+
+# Clawdbot state (if you want to exclude session data)
+# .clawdbot/
+
+# Keep these
+!AGENTS.md
+!USER.md
+!SOUL.md
+!IDENTITY.md
+!TOOLS.md
+!HEARTBEAT.md
+!BOOTSTRAP.md
+!grocery-list.md
+!memory/*.md
+!MEMORY.md

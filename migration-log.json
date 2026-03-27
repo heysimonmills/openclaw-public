@@ -1,0 +1,417 @@
+{
+  "errors": [
+    {
+      "message": "Failed to migrate entry 'Marketing': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"40c7889f-0520-4ee9-8c49-3f4933a5a8f3\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:41.544Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Canada Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"de4e9e44-5dc1-4283-949b-162cbc0f6912\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:41.973Z"
+    },
+    {
+      "message": "Failed to migrate entry 'USA Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"e2b05a44-476a-4f21-9fdb-3c1db39b87cb\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:42.303Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Business Operations': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"570d3c64-dae0-45fb-9d94-132c042addb3\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:42.653Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Website Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"fa272688-f4fa-4185-93ea-a4cff1cc7739\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:42.988Z"
+    },
+    {
+      "message": "Failed to migrate entry 'The collagen problem': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"9b035076-3be1-410c-8b03-bca4416e3aa6\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:45.132Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finding a supplier pt2 (ep7)': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"2f920d85-ba28-4293-9cd8-370f6e130975\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:45.697Z"
+    },
+    {
+      "message": "Failed to migrate entry 'validating the idea pt3 (ep5)': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"53bd0dc8-03a9-4fe0-9b7d-6339c5b1335b\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:46.149Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finding a supplier pt1 (ep6)': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"c2032981-9558-4eed-9ddb-183fb2e275fb\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:46.503Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Every failed prototype in 15 seconds.': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"e5ac4fb9-3317-4737-bca8-998522ed4a3e\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:46.859Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Samples 1- 3 (ep8)': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"5491c716-c8ab-4ea6-a1d6-fa35d4b3f319\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:47.425Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Are we a supplement or a food? ': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"df3c36ca-239b-48c5-866c-af13ea903cc7\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:47.828Z"
+    },
+    {
+      "message": "Failed to migrate entry 'QSS US Label Review': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b3c82c9b-64d2-42dd-84de-d6c9c6a8e972\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:50.172Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Look at similar cos': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"728367b0-acc3-4b00-b956-21255c968566\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:50.608Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Develop 10 paid ads for US launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"0df702a2-e3ea-42d7-b69e-0f181bab52a4\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:51.089Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get first round of assets': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"761b6584-68d4-4ce3-b17f-7cd16c283aed\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:51.587Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Colours': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"aa136f0e-beb4-4930-8269-cd6d01b9a950\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:51.923Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Complete US Company Setup': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"0c9310b4-4ff7-489b-9e06-04044cda23fa\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:52.284Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Complete stability testing': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"48700c03-d54b-4d67-ab09-046610f404ce\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:52.814Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Develop 50 organic videos for US launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"a6f38463-bc29-464f-a661-d7a577450472\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:53.599Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get NPN': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"97f010fe-d99a-4375-b0ef-3efb76ac9805\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:53.968Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Develop shot list for assets': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b0b25294-49a1-4cc7-9913-9c961218176f\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:54.420Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Register domain': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b4483aa5-625b-4ac0-b62e-08383319ea9f\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:55.559Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Setup Shopify site': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"7c4e7bbd-21c0-4133-9f7c-be7ac12da81d\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:55.878Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Develop DTC marketing strategy': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"d5621dfd-8b09-4797-a525-f11f560d066b\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:56.375Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Tone ': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"14c026ef-24de-4c71-9571-e04aa34e1580\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:58.339Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Submit Product License Application': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"183d6f97-0660-426b-ac94-251edbfb0961\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:59.219Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Update financial model for US': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"696f681f-ad4e-4187-b76d-59aeda897be3\"}",
+      "data": null,
+      "time": "2026-02-17T14:28:59.761Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Look into TT Shop + Whop': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"d10953c7-e42c-402a-83b7-d72366a4ba29\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:01.115Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Open US Bank Account': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"065c5945-f80c-4a21-a303-0f0e96e47d46\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:01.671Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Copy ': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b3c0dede-1d53-41a0-b5be-7a6b0bcf2be4\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:03.599Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finalize Evidence Package': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"53815e2c-5f8f-41d6-a4d2-285b91100e94\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:03.918Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get a customs broker': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"8ae2a765-195e-446b-acb7-f617247d0b6c\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:04.311Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Sign with Canadian 3PL': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"be36e0a0-f43b-464a-bf08-fd06968efc1d\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:04.782Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Ask Cyrus about TT Shop Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"32e2babb-fe6c-49f9-806a-ffea164415cf\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:05.174Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finalize brand guide': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"92898407-3e5f-4646-91f8-8aec84b8d608\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:05.943Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Register for CHFA': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"dbe31e57-33c6-408e-b2e0-f2e8aeddf6f7\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:08.579Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finalize product formulation': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"565c8949-7643-4353-ae14-86ce02d15a74\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:08.925Z"
+    },
+    {
+      "message": "Failed to migrate entry 'US trademark registration': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"20a4d981-288c-45f6-96bc-06bfe97b002e\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:09.564Z"
+    },
+    {
+      "message": "Failed to migrate entry 'QSS CA label review': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"c252f823-eacc-4b68-9393-e23d5adf9eb0\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:10.092Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Launch on Amazon': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"de9c91c4-6d7b-4f7b-b662-41b3bf30ff54\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:10.535Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get FSVP': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"d2e8b1a1-7ca6-48e4-9664-41b639f9ba24\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:11.258Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Complete US Regulatory Requirements ': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"8d7509ec-e730-4a2a-8b95-a1aa19d9a786\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:11.592Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Draft v1 Complete': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"9298209c-e29a-4ae0-a6b1-ccd4e679334f\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:12.062Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Setup Meta': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"54ca30e8-0ba7-4f85-80c9-d7b233dda257\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:12.745Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Finalize stability testing template': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"4bf4bacd-eb88-4197-af8a-b64164212db8\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:13.115Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Complete Canadian regulatory requirements': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"5698e179-bdf8-404e-bb2e-f99daa14cfa3\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:14.867Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get EIN': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"1446235a-bcb3-4d26-8f43-4c86cf43eda3\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:15.771Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Find a shortform video editor': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"101e9b6e-4d85-435d-96b4-44ca067d1d52\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:16.155Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Launch website': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"ae8ca0de-8b9e-482d-80fe-248068c7247f\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:16.641Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Notify FDA Pre-Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"14f50ca9-3fc3-46f7-a40a-1570525438b9\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:17.024Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Sign with US 3PL': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"4eacd7e2-27b3-4c17-b10c-974f571bea20\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:17.609Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Setup Lifecycle flows': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"baadeac2-b157-43dc-97c3-a2d475355bf6\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:18.024Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Replenishment': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"3fbc6597-7004-44a7-977b-a51c18cb7575\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:18.385Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get Klaviyo': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"a5ecba26-c38d-42a7-96fe-377b76ff6e86\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:20.164Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Abandoned Cart': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"749636d5-1908-4062-91b2-65c4360f47f1\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:20.504Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Post-Purchase Nurture': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"80878692-0814-4169-9f2e-48b4eaf4ab78\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:20.823Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Winback': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"c1250fed-bae1-4966-90a0-74b5ce35cf72\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:21.663Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Welcome Series': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"2746e7a9-2b3e-43cc-93f9-77f1b349fd16\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:22.416Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Get Product Reviews Pre-Launch': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b4631861-658e-4c7b-a1b5-5cb1c3c958ae\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:22.816Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Setup Google Workspace': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"e2f34fdb-a377-4e9d-b0ef-f5049c447a48\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:23.215Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Replo Landing Pages': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"93fe777f-92ac-4c0c-82b1-f3b8bfff2b73\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:23.552Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Setup TT': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"0e711d1d-4cd9-46a9-8809-1bf5e8291a17\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:24.270Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Testimonial Engagement': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"935f17ac-6542-4599-8c10-1b41ce0d48b2\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:24.607Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Email flow set up': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"b0fe6b3f-f7f0-472b-9684-9a62e74ef0e2\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:24.952Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Testimonial collection': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"d4f5e9da-5bbb-485e-a330-6b7a2ad4173c\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:25.263Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Place test order on site': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"dc3138f4-d806-4667-8e8c-b7f104a92ada\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:25.885Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Site copy review': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"12a522f5-5e29-44d5-b65e-eb58e4942b55\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:26.617Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Site connection check with Meta': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"fb019ea6-60f3-4286-8cc7-737ebcea5cf1\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:27.030Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Site conversion tracking check': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"ac0f2a0b-42d3-47c5-8c6c-841bd866daaf\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:27.352Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Testimonial Implementation': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"6b7bdd09-036d-4405-aa61-c6da5bf54e5b\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:27.664Z"
+    },
+    {
+      "message": "Failed to migrate entry '2fac4c6b-a88a-80cf-b1c1-faf3edbbce18': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"2fa6beb2-3d33-472a-b4b1-7c41a1f7d941\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:28.067Z"
+    },
+    {
+      "message": "Failed to migrate entry 'Test Order placement': Notion API error: 400 - {\"object\":\"error\",\"status\":400,\"code\":\"validation_error\",\"message\":\"Status is not a property that exists.\",\"request_id\":\"a83b9c08-c597-4e4f-92ea-9ac4ae95300f\"}",
+      "data": null,
+      "time": "2026-02-17T14:29:28.402Z"
+    }
+  ],
+  "created": [
+    {
+      "message": "GJC Projects database",
+      "data": {
+        "id": "30a44b5e-ebe5-810e-8a22-d517de793bc6"
+      },
+      "time": "2026-02-17T14:28:42.988Z"
+    },
+    {
+      "message": "GJC Editing Tracker database",
+      "data": {
+        "id": "30a44b5e-ebe5-8188-ab14-c5d0f19b3cb2"
+      },
+      "time": "2026-02-17T14:28:47.828Z"
+    },
+    {
+      "message": "GJC Tasks Archive database",
+      "data": {
+        "id": "30a44b5e-ebe5-810a-8467-c8840ae1c145"
+      },
+      "time": "2026-02-17T14:29:28.402Z"
+    },
+    {
+      "message": "Good Jelly HQ page",
+      "data": {
+        "id": "30a44b5e-ebe5-81bb-97a1-f3c76eb8576c"
+      },
+      "time": "2026-02-17T14:29:28.951Z"
+    }
+  ],
+  "skipped": [],
+  "migrated": [
+    {
+      "message": "GJ Content Plan - archived to separate database",
+      "data": {
+        "sourceId": "2a3c4c6b-a88a-8062-a413-e6ea537542d7",
+        "archiveId": "30a44b5e-ebe5-81be-b88b-cf264db73ba2",
+        "existingId": "2fa44b5e-ebe5-8115-8a44-c742824528cf"
+      },
+      "time": "2026-02-17T14:28:36.798Z"
+    }
+  ],
+  "stats": {
+    "databasesCreated": 4,
+    "entriesMigrated": 84,
+    "pagesCreated": 2,
+    "errors": 73
+  }
+}

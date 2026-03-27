@@ -1,0 +1,67 @@
+{
+  "entity": "Person E",
+  "entityType": "person",
+  "category": "business_partner",
+  "facts": [
+    {
+      "id": "person-e-001",
+      "fact": "Person E is [AGE] years old",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-e-002",
+      "fact": "Person E works at [EMPLOYER] in [DEPARTMENT]",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-e-003",
+      "fact": "Person E is a sports friend known for approximately [DURATION]",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-e-004",
+      "fact": "Person E is co-founder of Company B with the user",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-e-005",
+      "fact": "Person E brings marketing expertise from their corporate role to Company B",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}

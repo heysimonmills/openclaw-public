@@ -1,0 +1,55 @@
+{
+  "entity": "Person F",
+  "entityType": "person",
+  "category": "friend",
+  "facts": [
+    {
+      "id": "person-f-001",
+      "fact": "Person F is [AGE] years old",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-f-002",
+      "fact": "Person F is a friend known since high school, approximately [DURATION]",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-f-003",
+      "fact": "Person F works in [CAREER_FIELD]",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "person-f-004",
+      "fact": "Person F is described as caring, thoughtful, and introverted",
+      "category": "preference",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}

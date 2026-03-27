@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hardware-specs-guide</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="hardware-requirements-guide">Hardware Requirements Guide</h1>
+<h2 id="running-clawdbot-seedbox-media-server">Running Clawdbot +
+Seedbox + Media Server</h2>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>This guide outlines the hardware specifications needed to run three
+services simultaneously on a single machine:</p>
+<ol type="1">
+<li><strong>Clawdbot</strong> — Your AI assistant and automation
+platform</li>
+<li><strong>Seedbox</strong> — BitTorrent client for
+downloading/seeding</li>
+<li><strong>Media Server</strong> — Plex/Jellyfin for streaming
+media</li>
+</ol>
+<hr />
+<h2 id="three-configuration-options">Three Configuration Options</h2>
+<h3 id="option-1-budget-build-300-500">Option 1: Budget Build
+(~$300-500)</h3>
+<p><em>Good for: Clawdbot + light seedbox + media server for 1-2
+users</em></p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specs</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CPU</strong></td>
+<td>Intel i3-10100 / AMD Ryzen 3 3200G</td>
+<td>4 cores, integrated graphics</td>
+</tr>
+<tr class="even">
+<td><strong>RAM</strong></td>
+<td>8 GB DDR4</td>
+<td>Single stick okay, dual-channel better</td>
+</tr>
+<tr class="odd">
+<td><strong>Storage (OS)</strong></td>
+<td>120 GB SSD</td>
+<td>SATA or NVMe</td>
+</tr>
+<tr class="even">
+<td><strong>Storage (Media)</strong></td>
+<td>2-4 TB HDD</td>
+<td>5400 RPM minimum, 7200 RPM preferred</td>
+</tr>
+<tr class="odd">
+<td><strong>Network</strong></td>
+<td>Gigabit Ethernet</td>
+<td>Must have stable internet</td>
+</tr>
+<tr class="even">
+<td><strong>Power Supply</strong></td>
+<td>300W 80+ Bronze</td>
+<td>Don’t cheap out here</td>
+</tr>
+<tr class="odd">
+<td><strong>Case</strong></td>
+<td>Any mini-ITX or micro-ATX</td>
+<td>Ensure good airflow</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimated Power Draw:</strong> 30-60W idle, 80-120W under
+load</p>
+<hr />
+<h3 id="option-2-recommended-build-600-900">Option 2: Recommended Build
+(~$600-900)</h3>
+<p><em>Good for: Clawdbot + active seedbox + media server for 3-5
+concurrent users</em></p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specs</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CPU</strong></td>
+<td>Intel i5-12400 / AMD Ryzen 5 5600G</td>
+<td>6 cores, excellent efficiency</td>
+</tr>
+<tr class="even">
+<td><strong>RAM</strong></td>
+<td>16 GB DDR4 (2x8GB)</td>
+<td>Dual-channel for better performance</td>
+</tr>
+<tr class="odd">
+<td><strong>Storage (OS/Apps)</strong></td>
+<td>256 GB NVMe SSD</td>
+<td>Fast boot and app loading</td>
+</tr>
+<tr class="even">
+<td><strong>Storage (Media)</strong></td>
+<td>4-8 TB HDD (or NAS)</td>
+<td>Consider 2x drives for redundancy</td>
+</tr>
+<tr class="odd">
+<td><strong>Network</strong></td>
+<td>Gigabit Ethernet</td>
+<td>Cat6 cables, gigabit router</td>
+</tr>
+<tr class="even">
+<td><strong>Power Supply</strong></td>
+<td>450W 80+ Gold</td>
+<td>Efficiency matters for 24/7 operation</td>
+</tr>
+<tr class="odd">
+<td><strong>Case</strong></td>
+<td>Fractal Design Node 304 / SilverStone</td>
+<td>Hot-swappable bays ideal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimated Power Draw:</strong> 35-70W idle, 100-150W under
+load</p>
+<hr />
+<h3 id="option-3-high-performance-build-1200-1800">Option 3:
+High-Performance Build (~$1200-1800)</h3>
+<p><em>Good for: Clawdbot + heavy seedbox (1000+ torrents) + 4K media
+server for 10+ users</em></p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specs</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CPU</strong></td>
+<td>Intel i5-13500 / AMD Ryzen 7 5700G</td>
+<td>8+ cores, hardware transcoding</td>
+</tr>
+<tr class="even">
+<td><strong>RAM</strong></td>
+<td>32 GB DDR4 (2x16GB)</td>
+<td>Future-proof, handles many transcodes</td>
+</tr>
+<tr class="odd">
+<td><strong>Storage (OS/Apps)</strong></td>
+<td>500 GB NVMe SSD</td>
+<td>Samsung 980 Pro or similar</td>
+</tr>
+<tr class="even">
+<td><strong>Storage (Media)</strong></td>
+<td>8-16 TB (multiple drives)</td>
+<td>Consider RAID/ZFS setup</td>
+</tr>
+<tr class="odd">
+<td><strong>Storage (Cache)</strong></td>
+<td>1 TB NVMe SSD</td>
+<td>For seedbox cache/transcoding</td>
+</tr>
+<tr class="even">
+<td><strong>Network</strong></td>
+<td>2.5GbE or 10GbE</td>
+<td>If your internet supports it</td>
+</tr>
+<tr class="odd">
+<td><strong>Power Supply</strong></td>
+<td>550W 80+ Platinum</td>
+<td>Maximum efficiency for 24/7</td>
+</tr>
+<tr class="even">
+<td><strong>Case</strong></td>
+<td>Fractal Design Define 7 / SilverStone CS381</td>
+<td>8+ drive bays, good cooling</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estimated Power Draw:</strong> 45-90W idle, 150-250W under
+load</p>
+<hr />
+<h2 id="component-deep-dive">Component Deep Dive</h2>
+<h3 id="cpu-requirements">CPU Requirements</h3>
+<p><strong>Minimum:</strong> - 2 cores / 4 threads - x86_64 architecture
+(Intel or AMD) - Supports hardware virtualization (for
+Docker/containers)</p>
+<p><strong>Recommended:</strong> - 4+ cores / 8+ threads - Intel Quick
+Sync or AMD VCE (for hardware transcoding) - Low TDP (65W or less) for
+efficiency</p>
+<p><strong>Why it matters:</strong> - Clawdbot: 1-2 cores typical usage
+- Seedbox: 1-2 cores during active downloads - Media Server: 1-4 cores
+per transcode (software) or minimal (hardware)</p>
+<h3 id="ram-requirements">RAM Requirements</h3>
+<p><strong>By Service:</strong> | Service | Minimum | Recommended |
+Heavy Use | |———|———|————-|———–| | Clawdbot | 1 GB | 2 GB | 4 GB | |
+Seedbox (qBittorrent) | 512 MB | 1-2 GB | 4 GB+ | | Media Server (Plex)
+| 1 GB | 2 GB | 4 GB+ | | OS Overhead | 1-2 GB | 2 GB | 4 GB | |
+<strong>Total</strong> | <strong>4 GB</strong> | <strong>8 GB</strong> |
+<strong>16 GB</strong> |</p>
+<p><strong>RAM Tips:</strong> - DDR4 is fine; DDR5 not necessary - ECC
+RAM not required (nice for ZFS though) - Leave room for growth</p>
+<h3 id="storage-requirements">Storage Requirements</h3>
+<p><strong>SSD (Operating System + Applications):</strong> - 120 GB
+minimum - 256 GB recommended (room for logs, temp files) - NVMe
+preferred for faster boot times</p>
+<p><strong>HDD (Media Storage):</strong> - Calculate: ~3-5 GB per hour
+of 1080p content - 4K content: ~15-25 GB per hour - Recommendation:
+Start with 4 TB, expand as needed</p>
+<p><strong>Seedbox Storage:</strong> - Active downloads: 100-500 GB -
+Seeding: Depends on ratio goals (1-4 TB typical)</p>
+<p><strong>Configuration Options:</strong></p>
+<pre><code>Option A: Simple
+├── 256 GB NVMe (OS + Apps + Clawdbot)
+└── 4 TB HDD (Media + Seedbox)
+
+Option B: Separate Cache
+├── 256 GB NVMe (OS + Apps)
+├── 1 TB NVMe (Seedbox cache + Transcoding)
+└── 8 TB HDD (Media storage)
+
+Option C: NAS/SAN
+├── 256 GB NVMe (OS + Apps)
+└── Network attached storage (Media + Seedbox)</code></pre>
+<h3 id="network-requirements">Network Requirements</h3>
+<p><strong>Internet:</strong> - Download: 50+ Mbps (media streaming) -
+Upload: 20+ Mbps (seedbox sharing, Clawdbot webhooks) - Unlimited data
+preferred</p>
+<p><strong>Local Network:</strong> - Gigabit ethernet minimum - Cat5e or
+Cat6 cables - Gigabit router/switch</p>
+<p><strong>Port Requirements:</strong> | Service | Ports | Direction |
+|———|——-|———–| | Clawdbot | 443, 80 | Inbound | | SSH | 22 | Inbound
+(restricted) | | Seedbox | 6881-6889 | Inbound/Outbound | | Plex | 32400
+| Inbound | | Jellyfin | 8096 | Inbound |</p>
+<hr />
+<h2 id="software-stack-recommendations">Software Stack
+Recommendations</h2>
+<h3 id="operating-system">Operating System</h3>
+<p><strong>Ubuntu Server 22.04 LTS</strong> (Recommended) - Stable,
+long-term support - Large community - Easy package management</p>
+<p><strong>Alternative: TrueNAS SCALE</strong> - Built-in ZFS - Docker
+support - Web-based management</p>
+<h3 id="clawdbot-setup">Clawdbot Setup</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Node.js 20.x</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://deb.nodesource.com/setup_20.x <span class="kw">|</span> <span class="fu">sudo</span> <span class="at">-E</span> bash <span class="at">-</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> nodejs</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Clawdbot</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> npm install <span class="at">-g</span> clawdbot</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Configure auto-start</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable clawdbot</span></code></pre></div>
+<h3 id="seedbox-setup">Seedbox Setup</h3>
+<p><strong>Recommended: qBittorrent + VPN</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install qBittorrent-nox (headless)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install qbittorrent-nox</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run as service</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable qbittorrent-nox</span></code></pre></div>
+<p><strong>Docker Alternative:</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;3&#39;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">qbittorrent</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> linuxserver/qbittorrent</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> qbittorrent</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> PUID=1000</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> PGID=1000</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./config:/config</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> /mnt/media/downloads:/downloads</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 8080:8080</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 6881:6881</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> unless-stopped</span></span></code></pre></div>
+<h3 id="media-server-setup">Media Server Setup</h3>
+<p><strong>Plex Media Server:</strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download from plex.tv</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://downloads.plex.tv/plex-media-server-new/...</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> plexmediaserver_<span class="pp">*</span>.deb</span></code></pre></div>
+<p><strong>Jellyfin (Open Source Alternative):</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Jellyfin</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://repo.jellyfin.org/install-debuntu.sh <span class="kw">|</span> <span class="fu">sudo</span> bash</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install jellyfin</span></code></pre></div>
+<hr />
+<h2 id="power-cost-analysis">Power &amp; Cost Analysis</h2>
+<h3 id="electricity-costs-247-operation">Electricity Costs (24/7
+Operation)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Build</th>
+<th>Power Draw</th>
+<th>Monthly Cost*</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Budget</td>
+<td>50W average</td>
+<td>$4.50</td>
+<td>$54</td>
+</tr>
+<tr class="even">
+<td>Recommended</td>
+<td>75W average</td>
+<td>$6.75</td>
+<td>$81</td>
+</tr>
+<tr class="odd">
+<td>High-Performance</td>
+<td>120W average</td>
+<td>$10.80</td>
+<td>$130</td>
+</tr>
+</tbody>
+</table>
+<p>*Based on $0.12/kWh average North American rate</p>
+<h3 id="vps-vs-local-comparison-3-year-tco">VPS vs Local Comparison
+(3-year TCO)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Cost</th>
+<th>VPS ($20/mo)</th>
+<th>Budget Local</th>
+<th>Rec. Local</th>
+<th>High-Perf Local</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hardware</td>
+<td>$0</td>
+<td>$400</td>
+<td>$750</td>
+<td>$1500</td>
+</tr>
+<tr class="even">
+<td>Electricity (3yr)</td>
+<td>$0</td>
+<td>$162</td>
+<td>$243</td>
+<td>$390</td>
+</tr>
+<tr class="odd">
+<td>Internet</td>
+<td>$0*</td>
+<td>$0*</td>
+<td>$0*</td>
+<td>$0*</td>
+</tr>
+<tr class="even">
+<td><strong>3-Year Total</strong></td>
+<td><strong>$720</strong></td>
+<td><strong>$562</strong></td>
+<td><strong>$993</strong></td>
+<td><strong>$1890</strong></td>
+</tr>
+</tbody>
+</table>
+<p>*Assumes you already pay for internet</p>
+<p><strong>Break-even point:</strong> ~18 months for budget build, ~28
+months for recommended build</p>
+<hr />
+<h2 id="buying-guide">Buying Guide</h2>
+<h3 id="where-to-buy">Where to Buy</h3>
+<p><strong>New Components:</strong> - Amazon (convenience, returns) -
+Newegg (deals, bundles) - Micro Center (in-store deals, especially CPUs)
+- B&amp;H Photo (no tax outside NY/NJ)</p>
+<p><strong>Used/Refurbished (Great for budget builds):</strong> - eBay
+(corporate off-lease desktops) - Facebook Marketplace (local deals) -
+r/homelabsales (Reddit community)</p>
+<p><strong>Recommended Pre-Built Options:</strong> - Dell OptiPlex
+7050/7060 Micro (compact, quiet) - HP EliteDesk 800 G3 Mini - Lenovo
+ThinkCentre M720q</p>
+<h3 id="sample-shopping-list-recommended-build">Sample Shopping List
+(Recommended Build)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Model</th>
+<th>Est. Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU</td>
+<td>Intel i5-12400</td>
+<td>$180</td>
+</tr>
+<tr class="even">
+<td>Motherboard</td>
+<td>B660 Micro-ATX</td>
+<td>$100</td>
+</tr>
+<tr class="odd">
+<td>RAM</td>
+<td>16GB DDR4-3200</td>
+<td>$50</td>
+</tr>
+<tr class="even">
+<td>SSD (OS)</td>
+<td>256GB NVMe</td>
+<td>$40</td>
+</tr>
+<tr class="odd">
+<td>HDD (Media)</td>
+<td>4TB WD Blue</td>
+<td>$80</td>
+</tr>
+<tr class="even">
+<td>Case</td>
+<td>Fractal Node 304</td>
+<td>$100</td>
+</tr>
+<tr class="odd">
+<td>PSU</td>
+<td>450W 80+ Gold</td>
+<td>$70</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>~$620</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="setup-tips">Setup Tips</h2>
+<h3 id="bios-settings">BIOS Settings</h3>
+<ul>
+<li>Enable virtualization (VT-x/AMD-V) for Docker</li>
+<li>Set power profile to “Balanced” or “Power Saver”</li>
+<li>Disable unused features (audio if headless)</li>
+</ul>
+<h3 id="os-optimization">OS Optimization</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reduce swappiness for SSD longevity</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sysctl vm.swappiness=10</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable automatic updates for security</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install unattended-upgrades</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Monitor temperatures</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install lm-sensors</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sensors-detect</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">sensors</span></span></code></pre></div>
+<h3 id="drive-management">Drive Management</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check drive health</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> smartctl <span class="at">-a</span> /dev/sda</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Monitor disk usage</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up log rotation to prevent SSD wear</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/logrotate.conf</span></code></pre></div>
+<h3 id="network-optimization">Network Optimization</h3>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase TCP buffer sizes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sysctl <span class="at">-w</span> net.core.rmem_max=134217728</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sysctl <span class="at">-w</span> net.core.wmem_max=134217728</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable BBR congestion control</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/sysctl.conf</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add: net.ipv4.tcp_congestion_control=bbr</span></span></code></pre></div>
+<hr />
+<h2 id="troubleshooting-common-issues">Troubleshooting Common
+Issues</h2>
+<h3 id="high-cpu-usage">High CPU Usage</h3>
+<ul>
+<li>Check transcoding settings (use hardware acceleration)</li>
+<li>Limit concurrent seedbox connections</li>
+<li>Monitor with: <code>htop</code>, <code>iotop</code></li>
+</ul>
+<h3 id="high-ram-usage">High RAM Usage</h3>
+<ul>
+<li>Add swap file if needed:
+<code>sudo fallocate -l 4G /swapfile</code></li>
+<li>Limit Plex transcoder threads</li>
+<li>Check for memory leaks: <code>ps aux --sort=-%mem | head</code></li>
+</ul>
+<h3 id="slow-network">Slow Network</h3>
+<ul>
+<li>Test speed: <code>iperf3</code>, <code>speedtest-cli</code></li>
+<li>Check cable quality</li>
+<li>Verify router QoS settings</li>
+</ul>
+<h3 id="storage-full">Storage Full</h3>
+<ul>
+<li>Set up automated cleanup scripts</li>
+<li>Use <code>ncdu</code> to find large files</li>
+<li>Implement retention policies for seedbox</li>
+</ul>
+<hr />
+<h2 id="expansion-path">Expansion Path</h2>
+<p><strong>When you need more:</strong></p>
+<ol type="1">
+<li><strong>More Storage:</strong> Add external USB drives or NAS</li>
+<li><strong>More RAM:</strong> Easy upgrade on most motherboards</li>
+<li><strong>Better Network:</strong> Add 2.5GbE or 10GbE NIC</li>
+<li><strong>Redundancy:</strong> Add second machine for failover</li>
+</ol>
+<hr />
+<h2 id="quick-reference">Quick Reference</h2>
+<h3 id="minimum-viable-specs">Minimum Viable Specs</h3>
+<ul>
+<li>CPU: 4 threads</li>
+<li>RAM: 8 GB</li>
+<li>Storage: 120 GB SSD + 2 TB HDD</li>
+<li>Network: Gigabit ethernet</li>
+</ul>
+<h3 id="recommended-specs">Recommended Specs</h3>
+<ul>
+<li>CPU: 6 cores + iGPU</li>
+<li>RAM: 16 GB</li>
+<li>Storage: 256 GB NVMe + 4 TB HDD</li>
+<li>Network: Gigabit ethernet, good upload speed</li>
+</ul>
+<h3 id="check-before-buying">Check Before Buying</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />CPU supports Quick Sync /
+VCE?</label></li>
+<li><label><input type="checkbox" />Motherboard has enough SATA
+ports?</label></li>
+<li><label><input type="checkbox" />Case has room for all
+drives?</label></li>
+<li><label><input type="checkbox" />Power supply sufficient
+wattage?</label></li>
+<li><label><input type="checkbox" />Network card on
+motherboard?</label></li>
+</ul>
+<hr />
+<p><em>Generated for Simon Mills — February 2026</em></p>
+</body>
+</html>

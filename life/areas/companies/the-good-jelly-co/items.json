@@ -1,0 +1,67 @@
+{
+  "entity": "Company B",
+  "entityType": "company",
+  "category": "business",
+  "facts": [
+    {
+      "id": "company-b-001",
+      "fact": "Company B is a CPG (Consumer Packaged Goods) business",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-b-002",
+      "fact": "Company B is co-founded by the user and Person E",
+      "category": "relationship",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-b-003",
+      "fact": "Company B just launched as of January 2026",
+      "category": "milestone",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-b-004",
+      "fact": "Company B email for calendar invites is [YOUR_BUSINESS_EMAIL]",
+      "category": "context",
+      "timestamp": "2026-01-28",
+      "source": "MEMORY.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    },
+    {
+      "id": "company-b-005",
+      "fact": "Company B is the user's primary focus, transitioning from solo consulting to building with a co-founder",
+      "category": "status",
+      "timestamp": "2026-01-28",
+      "source": "full-profile.md",
+      "status": "active",
+      "supersededBy": null,
+      "relatedEntities": [],
+      "lastAccessed": "2026-02-01",
+      "accessCount": 0
+    }
+  ]
+}
